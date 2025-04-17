@@ -4,14 +4,17 @@
 #include "silslogo.h"
 #include "silsqr.h"
 
+
+
 #include "SoftwareSerial.h"
 #define TX_PIN 11 // Arduino transmit  YELLOW WIRE  labeled RX on printer
 #define RX_PIN 10 // Arduino receive   GREEN WIRE   labeled TX on printer
+
 #define BUTTON_PIN 5 // Button connected to pin 5
+
 
 SoftwareSerial mySerial(RX_PIN, TX_PIN); // Declare SoftwareSerial obj first
 Adafruit_Thermal printer(&mySerial);     // Pass addr to printer constructor
-// Then see setup() function regarding serial & printer begin() calls.
 
 bool hasPrinted = false;
 
@@ -91,4 +94,3 @@ void printReceipt() {
   printer.wake();
   printer.setDefault();
 }
- 
